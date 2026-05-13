@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
+import Stagger from "./components/Stagger";
+import Trigger from "./components/Trigger";
+
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -75,6 +78,8 @@ useGSAP(()=>{
       >
         Created by Beaula Ekka
       </h1> */}
+       <Stagger  />
+       <Trigger  />
       
     </main>
   );

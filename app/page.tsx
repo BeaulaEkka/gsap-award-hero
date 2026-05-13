@@ -43,13 +43,23 @@ export default function Home() {
   //   },
   //   { scope: containerRef }
   // );
+const timeline=gsap.timeline({
+  repeat:-1,repeatDelay:1,}
+);
 
-  useGSAP(() => {gsap.from("#blue-box", {rotation:360,x:200,duration:2,repeat:-1,yoyo:true,ease:'elastic'}) },[]);
+useGSAP(()=>{
+  timeline.to("#blue-box",{x:300,duration:1,ease:"back.inout",borderRadius:"100%",backgroundColor:"yellow",scale:1.5})
 
-  
+  timeline.to(("#blue-box"),{y:250,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
 
+  timeline.to(("#blue-box"),{x:500,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
+},[])
   return (
-    <main className="mt-20">
+    <main className="p-24">
+      <button type="button" className="bg-blue-700 p-24 rounded-xl text-white" onClick={() => {if (timeline.paused()){
+        timeline.play()}else {timeline.pause()}}}
+      
+      >pause</button>
       {/* <div className="w-full h-screen content-center bg-indigo-200">
         <div className="strip"></div>
         <div className="strip"></div>
@@ -57,7 +67,7 @@ export default function Home() {
         <div className="strip"></div>
       </div> */}
 
-      <div id="blue-box"className="w-20 h-20 bg-blue-500 rounded-lg"></div>
+      <div id="blue-box" className="w-20 h-20 bg-blue-500 rounded-lg"></div>
 
       {/* <h1
         ref={textRef}
@@ -65,6 +75,7 @@ export default function Home() {
       >
         Created by Beaula Ekka
       </h1> */}
+      
     </main>
   );
 }

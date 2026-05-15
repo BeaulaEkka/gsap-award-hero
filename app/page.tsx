@@ -50,15 +50,15 @@ const timeline=gsap.timeline({
   repeat:-1,repeatDelay:1,}
 );
 
-useGSAP(()=>{
-  timeline.to("#blue-box",{x:300,duration:1,ease:"back.inout",borderRadius:"100%",backgroundColor:"yellow",scale:1.5})
+// useGSAP(()=>{
+//   timeline.to("#blue-box",{x:300,duration:1,ease:"back.inout",borderRadius:"100%",backgroundColor:"yellow",scale:1.5})
 
-  timeline.to(("#blue-box"),{y:250,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
+//   timeline.to(("#blue-box"),{y:250,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
 
-  timeline.to(("#blue-box"),{x:500,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
-},[])
+//   timeline.to(("#blue-box"),{x:500,duration:1,ease:"back.inout",borderRadius:"0%",backgroundColor:"blue",scale:1})
+// },[])
   return (
-    <main className="p-24">
+    <main className="p-24 w-[80%] mx-auto" >
       <button type="button" className="bg-blue-700 p-24 rounded-xl text-white" onClick={() => {if (timeline.paused()){
         timeline.play()}else {timeline.pause()}}}
       
@@ -70,7 +70,7 @@ useGSAP(()=>{
         <div className="strip"></div>
       </div> */}
 
-      <div id="blue-box" className="w-20 h-20 bg-blue-500 rounded-lg"></div>
+      {/* <div id="blue-box" className="w-20 h-20 bg-blue-500 rounded-lg"></div> */}
 
       {/* <h1
         ref={textRef}
@@ -78,7 +78,7 @@ useGSAP(()=>{
       >
         Created by Beaula Ekka
       </h1> */}
-       <Stagger  />
+       {/* <Stagger  /> */}
        <Trigger  />
       
     </main>
